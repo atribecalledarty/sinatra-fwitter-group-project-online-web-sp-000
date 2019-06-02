@@ -72,7 +72,6 @@ class TweetsController < ApplicationController
     if user.tweets.include?(tweet)
       user.tweets.destroy(Tweet.find(params[:id]))
       user.save
-      binding.pry
     end
     redirect '/tweets'
   end
