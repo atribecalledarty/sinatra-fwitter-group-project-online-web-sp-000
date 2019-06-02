@@ -64,6 +64,7 @@ class TweetsController < ApplicationController
   post '/tweets/:id/delete' do
     user = current_user
     tweet = Tweet.find(params[:id])
+    binding.pry
     if user.tweets.include?(tweet)
       user.tweets.destroy(Tweet.find(params[:id]))
       user.save
