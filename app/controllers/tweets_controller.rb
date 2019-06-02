@@ -66,7 +66,7 @@ class TweetsController < ApplicationController
     tweet = Tweet.find(params[:id])
     if user.tweets.include?(tweet)
       Tweet.destroy(params[:id])
-      
+      user.save
     end
     redirect '/tweets'
   end
